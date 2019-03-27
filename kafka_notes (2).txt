@@ -1,0 +1,81 @@
+
+1) create an topic 
+$> ./kafka-topics.sh -create --zookeeeper localhost:2181 --replication-factor 1 --partitions 1 --topic movies
+
+2) producer
+$> ./kafka-console-producer.sh --broker-list localhost:9092 --topic movies 
+
+3) consumer
+$> ./kafka-console-consumer.sh --zookeeeper localhost:2181 --topic movies --from-beginning
+
+4) to get the topics from kafka.
+$> ./kafka-topics.sh --zookeeper localhost:2181 --list
+
+// kafka example using python
+// install pip3
+sudo apt-get install python3-pip
+
+
+
+
+package is kafka-python
+1) pip3 install kafka-python
+
+
+1) producer
+	- use rest-api
+	- json
+	- kafka
+	
+from kafka import KafkaProducer
+import json
+import requests
+
+
+response = requests.get("https://feeds.citibikenyc.com/stations/stations.json")
+
+# producer object
+producer = KafkaProducer(bootstrap_servers="localhost:9092")
+
+# send the data to kafka using producer  object.
+producer.send("citibike",value=response.content)
+
+producer.flush()
+
+producer.close()
+
+python3 fileName 	
+	
+	
+	
+
+
+2) consumer
+
+from kafka import KafkaConsumer
+
+consumer = KafkaConsumer("citibike",bootstrap_servers=["localhost:9092"],auto_offset_reset="earliest")
+
+for message in consumer:
+	print(message.value)
+
+
+	aggregating logs
+	intermidate data when our velocity of data is high.
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

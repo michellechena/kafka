@@ -1,0 +1,87 @@
+
+
+tar -xvf <filename>
+winscp -ftp 
+putty.exe - windows - linux
+puttygen.exe generate private key (.pem ->.ppk) 
+C:\Program Files\PuTTY
+ssh private key
+
+ec2-user
+java -version
+
+
+download kafka https://www.apache.org/dyn/closer.cgi?path=/kafka/2.1.1/kafka_2.11-2.1.1.tgz
+
+wget http://mirrors.sonic.net/apache/kafka/2.1.1/kafka_2.11-2.1.1.tgz
+
+zookeeper first
+rm -rf kafka
+ls
+./zookeeper-server-start.sh ../config/zookeeper.properties &
+ps -ef | grep "zookeeper"
+
+./kafka-server-start.sh ../config/server.properties &
+kill
+
+ubuntu
+
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update
+
+sudo apt-get install oracle-java8-installer
+
+sudo vi /etc/environment
+
+multi-node?? single mode?
+partition
+topic?
+messenger?
+publish/subscribe
+consumer/producer
+
+-- topic
+-- publisher (producer)/ subscribe(consumer)
+
+
+/tmp/kafka-config
+
+
+producer     write          kafka-serer       read       consumer 
+
+
+
+			   
+
+JAVA_HOME="/usr/lib/jvm/java-8-oracle"
+:wqa
+
+source /etc/environment to refresh the saved file
+
+wget http://mirrors.estointernet.in/apache/kafka/2.1.1/kafka_2.11-2.1.1.tgz
+
+
+create a topic
+./kafka-topics.sh -create --zookeeeper localhost:2181 --replication-factor 1 --partitions 1 --topic movies
+
+ ./kafka-topics.sh
+ ./kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic movie
+
+
+ cd kafka-logs/
+
+~/kafka/bin$
+
+create a topic 
+producer
+
+what kind of actoin yo uwant to take
+
+producer stor 
+notified by cusomer
+continuously every 3 seconds to go kafka broker 
+sync kafka broker and consumer
+
+9092
+
+https://feeds.citibikenyc.com/stations/stations.json
